@@ -1,0 +1,14 @@
+query GetCategories {
+  categories {
+    items {
+      name
+      url_key
+      product_count
+      children {
+        name
+        url_key
+        product_count
+      }
+    }
+  }
+}
