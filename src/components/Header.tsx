@@ -6,8 +6,8 @@ import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 
 export default function Header() {
   return (
-    <AppBar position="static">
-      <Toolbar>
+    <AppBar position="static" >
+      <Toolbar className='bg-white text-black'>
         <IconButton edge="start" color="inherit" aria-label="menu">
           <MenuIcon />
         </IconButton>

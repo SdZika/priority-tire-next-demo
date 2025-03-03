@@ -1,13 +1,17 @@
 import Layout from "../components/Layout";
-import { Hero } from "../components/Hero";
+import { HeroTest } from "../components/HeroTest";
 import ProductComponent from "@/components/ProductComponent";
+import { Hero } from "@/components/Hero";
+import PromotionSection from "@/components/PromotionSection";
 
 export default function Home() {
   return (
     <Layout>
       <h1>Welcome to the Homepage</h1>
-      <Hero />
+      <HeroTest />
       <ProductComponent />
+      <Hero />
+      <PromotionSection />
     </Layout>
   );
 }
