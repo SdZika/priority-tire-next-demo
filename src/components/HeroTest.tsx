@@ -12,6 +12,8 @@ export function HeroTest() {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const { data, loading, error } = useQuery<CategoriesData>(GET_CATEGORIES);
 
+  console.log("is there DATA:", data);
+
   const handleMenuOpen = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorEl(event.currentTarget);
   };

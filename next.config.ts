@@ -25,6 +25,32 @@ const nextConfig = {
   env: {
     NEXT_PUBLIC_API_URL: "http://localhost:3000/api", // Example of a public env variable
   },
+  async headers() {
+    return [
+      {
+        // Set CORS headers for all API routes
+        source: '/api/:path*', // Match all API routes
+        headers: [
+          {
+            key: 'Access-Control-Allow-Origin',
+            value: 'http://magento.test', // Your allowed origin (Magento's URL)
+          },
+          {
+            key: 'Access-Control-Allow-Methods',
+            value: 'GET, POST, PUT, DELETE', // Allowed methods
+          },
+          {
+            key: 'Access-Control-Allow-Headers',
+            value: 'Content-Type, Authorization', // Allowed headers
+          },
+          {
+            key: 'Access-Control-Allow-Credentials',
+            value: 'true', // Allow credentials (cookies, HTTP authentication)
+          },
+        ],
+      },
+    ];
+  },
 };
 
 module.exports = nextConfig;
