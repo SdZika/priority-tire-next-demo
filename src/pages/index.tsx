@@ -1,7 +1,7 @@
 import Layout from "../components/Layout";
 import { HeroTest } from "../components/HeroTest";
-import ProductComponent from "@/components/ProductComponent";
-import { Hero } from "@/components/Hero";
+import ProductComponent from "@/components/ProductComponent/ProductComponent";
+import { Hero } from "@/components/Hero/Hero";
 import PromotionSection from "@/components/PromotionSection";
 
 export default function Home() {

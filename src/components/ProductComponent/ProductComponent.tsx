@@ -1,12 +1,12 @@
 import { useQuery } from '@apollo/client';
-import { GET_PRODUCTS } from '../lib/graphql';
+import { GET_PRODUCTS } from '../../lib/graphql';
 
 interface Product {
   sku: string;
   name: string;
 }
 
-export default function ProductComponent() {
+export const ProductComponent = () => {
   const { data, loading, error } = useQuery(GET_PRODUCTS, {
     variables: {
       search: 't-shirt', // Search term
@@ -21,11 +21,11 @@ export default function ProductComponent() {
     <div>
       <h1>Products</h1>
       <ul>
-{data.products.items.map((product: Product) => (
-  <li key={product.sku}>
-    <strong>{product.name}</strong> - {product.sku}
-  </li>
-))}
+        {data.products.items.map((product: Product) => (
+          <li key={product.sku}>
+            <strong>{product.name}</strong> - {product.sku}
+          </li>
+          ))}
       </ul>
     </div>
   );

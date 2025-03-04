@@ -4,7 +4,7 @@ import SearchIcon from '@mui/icons-material/Search';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 
-export default function Header() {
+export const Header = () => {
   return (
     <AppBar position="static" >
       <Toolbar className='bg-white text-black'>
