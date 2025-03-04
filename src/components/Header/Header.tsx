@@ -1,29 +1,17 @@
-import { AppBar, Toolbar, Typography, IconButton } from '@mui/material';
-import MenuIcon from '@mui/icons-material/Menu';
-import SearchIcon from '@mui/icons-material/Search';
-import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
-import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import LocalShippingIcon from "@mui/icons-material/LocalShipping";
 
 export const Header = () => {
   return (
-    <AppBar position="static" >
-      <Toolbar className='bg-white text-black'>
-        <IconButton edge="start" color="inherit" aria-label="menu">
-          <MenuIcon />
-        </IconButton>
-        <Typography variant="h6" sx={{ flexGrow: 1 }}>
-          My Store
-        </Typography>
-        <IconButton color="inherit">
-          <SearchIcon />
-        </IconButton>
-        <IconButton color="inherit">
-          <ShoppingCartIcon />
-        </IconButton>
-        <IconButton color="inherit">
-          <AccountCircleIcon />
-        </IconButton>
-      </Toolbar>
-    </AppBar>
+    <div className="bg-black text-white py-2 px-4 flex justify-between items-center text-sm h-12">
+      <div className="pl-7">Call us: 866-440-0177</div>
+      <div className="flex space-x-4">
+        <span>Shipping is free for all orders!</span>
+        <span>90 Days Money Back Guarantee</span>
+      </div>
+      <div className="flex items-center text-[#FFB634] space-x-1">
+        <LocalShippingIcon fontSize="small" />
+        <span>Track my order</span>
+      </div>
+   </div>
   );
 }

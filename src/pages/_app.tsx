@@ -3,6 +3,7 @@ import { ApolloProvider } from "@apollo/client";
 import { ThemeProvider, CssBaseline, createTheme } from "@mui/material";
 import client from "@/lib/apolloClient"; 
 import "@/styles/globals.css";
+import { Layout } from "@/components/Layout";
 
 const theme = createTheme({
   palette: {
@@ -19,8 +20,10 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <ApolloProvider client={client}>
       <ThemeProvider theme={theme}>
-        <CssBaseline /> {/* Ensures MUI styles are reset properly */}
-        <Component {...pageProps} />
+        <Layout>
+          <CssBaseline /> {/* Ensures MUI styles are reset properly */}
+          <Component {...pageProps} />
+        </Layout>
       </ThemeProvider>
     </ApolloProvider>
   );

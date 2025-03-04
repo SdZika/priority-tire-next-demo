@@ -1,6 +1,6 @@
 import { Box, Typography } from '@mui/material';
 
-export default function PromotionSection() {
+export const PromotionSection = () => {
   return (
     <Box sx={{ display: 'flex flex-column', justifyContent: 'space-around', my: 4 }}>
       <Box>
@@ -12,3 +12,4 @@ export default function PromotionSection() {
     </Box>
   )
 }
+

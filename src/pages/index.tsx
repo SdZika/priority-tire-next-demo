@@ -1,17 +1,19 @@
-import Layout from "../components/Layout";
 import { HeroTest } from "../components/HeroTest";
-import ProductComponent from "@/components/ProductComponent/ProductComponent";
+import { ProductComponent } from "@/components/ProductComponent/ProductComponent";
+import { PromotionSection } from "@/components/PromotionSection/PromotionSection";
 import { Hero } from "@/components/Hero/Hero";
-import PromotionSection from "@/components/PromotionSection";
+import { Navbar } from "@/components";
+
 
 export default function Home() {
   return (
-    <Layout>
+    <>
+      <Navbar />
       <h1>Welcome to the Homepage</h1>
       <HeroTest />
       <ProductComponent />
       <Hero />
       <PromotionSection />
-    </Layout>
+    </>
   );
 }
