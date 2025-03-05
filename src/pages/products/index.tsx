@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
-import { mockProducts } from "@/lib/mockProducts";
+import { mockProducts } from "../../../dummyData/mockProducts";
+import { FC } from "react";
 
 // export async function getStaticPaths() {
 //   const { data } = await client.query({ query: GET_PRODUCT_URLS });
@@ -18,13 +19,32 @@ import { mockProducts } from "@/lib/mockProducts";
 //   return { props: { product: data.products.items[0] } };
 // }
 
+interface ProductProps {
+  products: {
+    id: string;
+    name: string;
+    price: number;
+    image: string;
+    description: string;
+    stock: number;
+    slug: string;
+  }[];
+}
 
- const Products = () => {
+export async function getStaticProps() {
+  return {
+    props: {
+      products: mockProducts,
+    },
+  };
+}
+
+ const Products:FC<ProductProps> = ({ products }) => {
   return (
     <div className="container mx-auto p-4">
       <h1 className="text-2xl font-bold mb-4">Products</h1>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        {mockProducts.map((product) => (
+        {products.map((product) => (
           <div key={product.id} className="border p-4 rounded-lg shadow-md">
             <Image
               src={product.image}
@@ -44,5 +64,7 @@ import { mockProducts } from "@/lib/mockProducts";
     </div>
   );
 }
+
+
 
 export default Products
