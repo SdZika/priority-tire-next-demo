@@ -3,7 +3,7 @@ import Image from "next/image";
 import { mockProducts } from "../../../dummyData/mockProducts";
 import { GetStaticPaths, GetStaticProps } from "next";
 import { FC } from "react";
-import StockStatus from "../../components/StockStatus/StockStatus";
+import { StockStatus } from "../../components/StockStatus/StockStatus";
 
 
 interface ProductPageProps {

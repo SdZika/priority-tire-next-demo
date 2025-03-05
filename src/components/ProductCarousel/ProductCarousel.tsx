@@ -3,13 +3,17 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import { Box, Typography } from '@mui/material';
 import { FC } from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
 
 interface Product {
   id: string;
   name: string;
-  price: string;
-  description: string;
+  price: number;
   image: string;
+  description: string;
+  stock: number;
+  slug: string;
 }
 
 interface ProductPageProps {
@@ -30,9 +34,10 @@ export const ProductsCarousel:FC<ProductPageProps> = ({products}) => {
     <Slider {...settings}>
       {products.map((product) => (
         <Box key={product.id} sx={{ padding: 2 }}>
-          <img src={product.image} alt={product.name} />
+          <Image src={product.image} alt={product.name} height={300} width={300}/>
           <Typography>{product.name}</Typography>
           <Typography>{product.price}</Typography>
+          <Link href={`/products/${product.slug}`}>View Details</Link>
         </Box>
       ))}
     </Slider>

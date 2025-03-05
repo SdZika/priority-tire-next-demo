@@ -5,7 +5,7 @@ interface StockStatusProps {
   slug: string;
 };
 
-const StockStatus:FC<StockStatusProps> = ({ slug } ) => {
+export const StockStatus:FC<StockStatusProps> = ({ slug } ) => {
   const [stock, setStock] = useState<number | null>(null);
 
   useEffect(() => {
@@ -25,4 +25,3 @@ const StockStatus:FC<StockStatusProps> = ({ slug } ) => {
   );
 };
 
-export default StockStatus;
