@@ -9,7 +9,6 @@ export default function Home() {
   return (
     <>
       <Navbar />
-      <h1>Welcome to the Homepage</h1>
       <HeroTest />
       <ProductComponent />
       <Hero />

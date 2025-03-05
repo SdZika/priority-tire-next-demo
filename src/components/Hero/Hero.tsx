@@ -13,7 +13,7 @@ export const Hero = () => {
         color: 'white',
       }}
     >
-      <Typography variant="h3">Welcome</Typography>
+      <Typography variant="h3" sx={{paddingBottom: "12rem"}}>New Tires For Sale Online</Typography>
     </Box>
   );
 }

@@ -7,6 +7,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import SearchIcon from "@mui/icons-material/Search";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
+import Link from "next/link";
 
 export const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -32,7 +33,9 @@ export const Navbar = () => {
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex space-x-6">
-          <span className="cursor-pointer text-lg font-medium hover:text-gray-600">TIRES</span>
+          <Link href="/products">
+            <span className="cursor-pointer text-lg font-medium hover:text-gray-600">TIRES</span>
+          </Link>
         </div>
 
         {/* Icons */}
@@ -53,7 +56,9 @@ export const Navbar = () => {
       <Drawer anchor="left" open={mobileOpen} onClose={toggleDrawer}>
         <List className="w-64">
           <ListItem component="button" onClick={toggleDrawer}>
-          <ListItemText primary="TIRES" />
+            <Link href="/products">
+              <ListItemText primary="TIRES" />
+            </Link> 
           </ListItem>
         </List>
       </Drawer>
