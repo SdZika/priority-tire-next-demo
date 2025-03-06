@@ -53,15 +53,6 @@ const ProductPage:FC<ProductPageProps> = ({ product }) => {
         <StockStatus slug={product.slug} />
         <button
           onClick={handleAddToCart}
-          style={{
-            backgroundColor: "#FFB634",
-            color: "black",
-            padding: "8px 16px",
-            borderRadius: "4px",
-            border: "none",
-            cursor: "pointer",
-            transition: "background-color 0.3s",
-          }}
         >
           Add to Cart
         </button>
