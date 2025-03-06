@@ -9,6 +9,15 @@ import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import Link from "next/link";
 
+const categories = [
+  { name: "TIRES", path: "/products" },
+  { name: "WHEELS", path: "/wheels" },
+  { name: "ACCESSORIES", path: "/accessories" },
+  { name: "DEALS", path: "/deals" },
+  { name: "MEMBERSHIP", path: "/membership" },
+  { name: "HELP CENTER", path: "/help-center" },
+];
+
 export const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
 
@@ -32,10 +41,14 @@ export const Navbar = () => {
         </div>
 
         {/* Desktop Navigation */}
-        <div className="hidden md:flex space-x-6">
-          <Link href="/products">
-            <span className="cursor-pointer text-lg font-medium hover:text-gray-600">TIRES</span>
+        <div className="hidden md:flex gap-x-8">
+        {categories.map((category, index) => (
+          <Link key={index} href={category.path}>
+            <span className="cursor-pointer text-lg font-medium hover:text-gray-600">
+              {category.name}
+            </span>
           </Link>
+  ))}
         </div>
 
         {/* Icons */}
@@ -54,14 +67,16 @@ export const Navbar = () => {
 
       {/* Mobile Drawer */}
       <Drawer anchor="left" open={mobileOpen} onClose={toggleDrawer}>
-        <List className="w-64">
-          <ListItem component="button" onClick={toggleDrawer}>
-            <Link href="/products">
-              <ListItemText primary="TIRES" />
-            </Link> 
+      <List className="w-64">
+        {categories.map((category, index) => (
+          <ListItem key={index} component="button" onClick={toggleDrawer}>
+            <Link href={category.path}>
+              <ListItemText primary={category.name} />
+            </Link>
           </ListItem>
-        </List>
-      </Drawer>
+        ))}
+      </List>
+    </Drawer>
     </AppBar>
   );
 };

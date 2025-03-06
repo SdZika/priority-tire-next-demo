@@ -7,6 +7,12 @@ const images = [
   { src: "/nexen.png", alt: "Nexen Tire Rebate" },
 ];
 
+const imagesPromo = [
+  { src: "/buyer_discount.png", alt: "Goodyear Tire Rebate" },
+  { src: "/clearance_deals.png", alt: "Hankook Tire Rebate" },
+  { src: "/special_discounts.png", alt: "Nexen Tire Rebate" },
+];
+
 export const PromotionSection = () => {
   return (
     <Box
@@ -30,6 +36,12 @@ export const PromotionSection = () => {
 
       <Box sx={{ mt: 3 }}>
         <Typography variant="h5">Save Now With Our Promotions</Typography>
+      </Box>
+
+      <Box sx={{ display: "flex", gap: 2, flexWrap: "wrap", justifyContent: "center" }}>
+        {imagesPromo.map((image, index) => (
+          <Image key={index} src={image.src} alt={image.alt} width={450} height={450} />
+        ))}
       </Box>
     </Box>
   );

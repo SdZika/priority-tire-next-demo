@@ -8,10 +8,10 @@ interface LayoutProps {
 
 export const Layout:FC<LayoutProps> = ({children}) => {
   return (
-          <>
-            <Header />
-            <div className="container-main">{children}</div>
-            <Footer />
-          </>
+    <>
+      <Header />
+      <div className="container-main">{children}</div>
+      <Footer />
+    </>
  )
 }

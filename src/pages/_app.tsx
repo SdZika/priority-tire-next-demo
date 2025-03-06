@@ -8,10 +8,10 @@ import { Layout } from "@/components/Layout";
 const theme = createTheme({
   palette: {
     primary: {
-      main: "#3b82f6", // Tailwind blue-500
+      main: "#000", // Tailwind black
     },
     secondary: {
-      main: "#ef4444", // Tailwind red-500
+      main: "#fff", // Tailwind white
     },
   },
 });
