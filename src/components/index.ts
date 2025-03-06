@@ -6,5 +6,6 @@ import { PromotionSection } from "./PromotionSection";
 import { Layout } from "./Layout";
 import { Navbar } from "./Navbar";
 import { StockStatus } from "./StockStatus";
+import { CartModal } from "./CartModal";
 
-export { Footer, Header, Hero, ProductsCarousel, PromotionSection, Layout, Navbar, StockStatus };
+export { Footer, Header, Hero, ProductsCarousel, PromotionSection, Layout, Navbar, StockStatus, CartModal };
