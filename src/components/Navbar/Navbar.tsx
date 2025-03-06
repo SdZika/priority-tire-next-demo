@@ -1,13 +1,13 @@
 "use client";
-
 import { useState } from "react";
 import Image from "next/image";
-import { AppBar, Toolbar, IconButton, Drawer, List, ListItem, ListItemText } from "@mui/material";
+import { AppBar, Toolbar, IconButton, Drawer, List, ListItem, ListItemText} from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import SearchIcon from "@mui/icons-material/Search";
-import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import Link from "next/link";
+import { CartModal } from "../CartModal/CartModal";
+
 
 const categories = [
   { name: "TIRES", path: "/products" },
@@ -57,7 +57,7 @@ export const Navbar = () => {
             <SearchIcon />
           </IconButton>
           <IconButton color="inherit">
-            <ShoppingCartIcon />
+          <CartModal /> 
           </IconButton>
           <IconButton color="inherit">
             <AccountCircleIcon />

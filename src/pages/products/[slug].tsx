@@ -4,6 +4,7 @@ import { mockProducts } from "../../../dummyData/mockProducts";
 import { GetStaticPaths, GetStaticProps } from "next";
 import { FC } from "react";
 import { StockStatus } from "../../components/StockStatus/StockStatus";
+import { useCart } from "../../context/CartContext"
 
 
 interface ProductPageProps {
@@ -23,6 +24,16 @@ interface Product {
 
 const ProductPage:FC<ProductPageProps> = ({ product }) => {
   const router = useRouter();
+  const { addToCart } = useCart();
+
+  const handleAddToCart = () => {
+    addToCart({
+      id: product.id,
+      name: product.name,
+      price: product.price,
+      quantity: 1,
+    });
+  };
 
   if (router.isFallback) {
     return <p>Loading...</p>;
@@ -40,6 +51,20 @@ const ProductPage:FC<ProductPageProps> = ({ product }) => {
 
         {/* StockStatus Component */}
         <StockStatus slug={product.slug} />
+        <button
+          onClick={handleAddToCart}
+          style={{
+            backgroundColor: "#FFB634",
+            color: "black",
+            padding: "8px 16px",
+            borderRadius: "4px",
+            border: "none",
+            cursor: "pointer",
+            transition: "background-color 0.3s",
+          }}
+        >
+          Add to Cart
+        </button>
       </div>
     </div>
   );

@@ -37,7 +37,15 @@ export const ProductsCarousel:FC<ProductPageProps> = ({products}) => {
           <Image src={product.image} alt={product.name} height={300} width={300}/>
           <Typography>{product.name}</Typography>
           <Typography>{product.price}</Typography>
-          <Link href={`/products/${product.slug}`}>View Details</Link>
+          <Link href={`/products/${product.slug}`} style={{
+            backgroundColor: "#FFB634",
+            color: "black",
+            padding: "8px 16px",
+            borderRadius: "4px",
+            border: "none",
+            cursor: "pointer",
+            transition: "background-color 0.3s",
+          }}>View Details</Link>
         </Box>
       ))}
     </Slider>

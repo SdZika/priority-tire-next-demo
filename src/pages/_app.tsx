@@ -4,6 +4,7 @@ import { ThemeProvider, CssBaseline, createTheme } from "@mui/material";
 import client from "@/lib/apolloClient"; 
 import "@/styles/globals.css";
 import { Layout } from "@/components/Layout";
+import { CartProvider } from "@/context/CartContext";
 
 const theme = createTheme({
   palette: {
@@ -20,10 +21,12 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <ApolloProvider client={client}>
       <ThemeProvider theme={theme}>
-        <Layout>
-          <CssBaseline /> {/* Ensures MUI styles are reset properly */}
-          <Component {...pageProps} />
-        </Layout>
+        <CartProvider>
+          <Layout>
+            <CssBaseline /> {/* Ensures MUI styles are reset properly */}
+            <Component {...pageProps} />
+          </Layout>
+        </CartProvider>
       </ThemeProvider>
     </ApolloProvider>
   );
